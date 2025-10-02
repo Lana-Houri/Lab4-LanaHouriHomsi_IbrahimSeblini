@@ -1,0 +1,566 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PyQt5gui module &mdash; PyQt5 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="database module" href="database.html" />
+    <link rel="prev" title="Lab2_LanaHouriHomsi" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PyQt5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Lab2_LanaHouriHomsi</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PyQt5gui module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#PyQt5gui.MainWindow"><code class="docutils literal notranslate"><span class="pre">MainWindow</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.table"><code class="docutils literal notranslate"><span class="pre">MainWindow.table</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.student_name"><code class="docutils literal notranslate"><span class="pre">MainWindow.student_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.student_age"><code class="docutils literal notranslate"><span class="pre">MainWindow.student_age</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.student_email"><code class="docutils literal notranslate"><span class="pre">MainWindow.student_email</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.student_id"><code class="docutils literal notranslate"><span class="pre">MainWindow.student_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.instructor_name"><code class="docutils literal notranslate"><span class="pre">MainWindow.instructor_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.instructor_age"><code class="docutils literal notranslate"><span class="pre">MainWindow.instructor_age</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.instructor_email"><code class="docutils literal notranslate"><span class="pre">MainWindow.instructor_email</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.instructor_id"><code class="docutils literal notranslate"><span class="pre">MainWindow.instructor_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.course_id"><code class="docutils literal notranslate"><span class="pre">MainWindow.course_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.course_name"><code class="docutils literal notranslate"><span class="pre">MainWindow.course_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.course_instructor_id"><code class="docutils literal notranslate"><span class="pre">MainWindow.course_instructor_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.reg_student_id"><code class="docutils literal notranslate"><span class="pre">MainWindow.reg_student_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.reg_course_dropdown"><code class="docutils literal notranslate"><span class="pre">MainWindow.reg_course_dropdown</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.assign_instructor_dropdown"><code class="docutils literal notranslate"><span class="pre">MainWindow.assign_instructor_dropdown</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.assign_course_dropdown"><code class="docutils literal notranslate"><span class="pre">MainWindow.assign_course_dropdown</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.search_input"><code class="docutils literal notranslate"><span class="pre">MainWindow.search_input</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.add_course"><code class="docutils literal notranslate"><span class="pre">MainWindow.add_course()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.add_instructor"><code class="docutils literal notranslate"><span class="pre">MainWindow.add_instructor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.add_student"><code class="docutils literal notranslate"><span class="pre">MainWindow.add_student()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.assign_instructor_to_course"><code class="docutils literal notranslate"><span class="pre">MainWindow.assign_instructor_to_course()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.delete_selected_record"><code class="docutils literal notranslate"><span class="pre">MainWindow.delete_selected_record()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.display_courses"><code class="docutils literal notranslate"><span class="pre">MainWindow.display_courses()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.display_instructors"><code class="docutils literal notranslate"><span class="pre">MainWindow.display_instructors()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.display_students"><code class="docutils literal notranslate"><span class="pre">MainWindow.display_students()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.edit_selected_record"><code class="docutils literal notranslate"><span class="pre">MainWindow.edit_selected_record()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.export_to_csv"><code class="docutils literal notranslate"><span class="pre">MainWindow.export_to_csv()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.get_selected_row"><code class="docutils literal notranslate"><span class="pre">MainWindow.get_selected_row()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.load_data"><code class="docutils literal notranslate"><span class="pre">MainWindow.load_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.register_student_to_course"><code class="docutils literal notranslate"><span class="pre">MainWindow.register_student_to_course()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.save_data"><code class="docutils literal notranslate"><span class="pre">MainWindow.save_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.search_records"><code class="docutils literal notranslate"><span class="pre">MainWindow.search_records()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.update_assign_course_dropdown"><code class="docutils literal notranslate"><span class="pre">MainWindow.update_assign_course_dropdown()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.update_course_dropdown"><code class="docutils literal notranslate"><span class="pre">MainWindow.update_course_dropdown()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PyQt5gui.MainWindow.update_instructor_dropdowns"><code class="docutils literal notranslate"><span class="pre">MainWindow.update_instructor_dropdowns()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#PyQt5gui.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="database.html">database module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tkintergui.html">tkintergui module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyQt5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Lab2_LanaHouriHomsi</a></li>
+      <li class="breadcrumb-item active">PyQt5gui module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/PyQt5gui.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-PyQt5gui">
+<span id="pyqt5gui-module"></span><h1>PyQt5gui module<a class="headerlink" href="#module-PyQt5gui" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PyQt5gui.</span></span><span class="sig-name descname"><span class="pre">MainWindow</span></span><a class="reference internal" href="_modules/PyQt5gui.html#MainWindow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PyQt5gui.MainWindow" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QMainWindow</span></code></p>
+<p>Main application window for the School Management System.</p>
+<p>Functionality: this class is the main application window for the School Management System. the functionalities of this class are:
+1. Provides forms for creating Students, Instructors, and Courses.
+2. Registers students to courses
+3. Assigns instructors to courses.
+3. Displays tables of the students, instructor and courses with search.
+4. Supports edit/delete actions on selected records.
+5. Exports current view to CSV; imports/exports full DB snapshot as JSON.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">current_view</span> <span class="pre">of</span> <span class="pre">type</span> <span class="pre">string</span></span></dt>
+<dd><p>Active table view (‘students’ | ‘instructors’ | ‘courses’).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.table">
+<span class="sig-name descname"><span class="pre">table</span></span><a class="headerlink" href="#PyQt5gui.MainWindow.table" title="Link to this definition"></a></dt>
+<dd><p>Main table widget showing the current view.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QTableWidget</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">#</span> <span class="pre">Form</span> <span class="pre">inputs</span></span></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>selected examples below</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.student_name">
+<span class="sig-name descname"><span class="pre">student_name</span></span><a class="headerlink" href="#PyQt5gui.MainWindow.student_name" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QLineEdit</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.student_age">
+<span class="sig-name descname"><span class="pre">student_age</span></span><a class="headerlink" href="#PyQt5gui.MainWindow.student_age" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QLineEdit</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.student_email">
+<span class="sig-name descname"><span class="pre">student_email</span></span><a class="headerlink" href="#PyQt5gui.MainWindow.student_email" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QLineEdit</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.student_id">
+<span class="sig-name descname"><span class="pre">student_id</span></span><a class="headerlink" href="#PyQt5gui.MainWindow.student_id" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QLineEdit</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.instructor_name">
+<span class="sig-name descname"><span class="pre">instructor_name</span></span><a class="headerlink" href="#PyQt5gui.MainWindow.instructor_name" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QLineEdit</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.instructor_age">
+<span class="sig-name descname"><span class="pre">instructor_age</span></span><a class="headerlink" href="#PyQt5gui.MainWindow.instructor_age" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QLineEdit</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.instructor_email">
+<span class="sig-name descname"><span class="pre">instructor_email</span></span><a class="headerlink" href="#PyQt5gui.MainWindow.instructor_email" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QLineEdit</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.instructor_id">
+<span class="sig-name descname"><span class="pre">instructor_id</span></span><a class="headerlink" href="#PyQt5gui.MainWindow.instructor_id" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QLineEdit</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.course_id">
+<span class="sig-name descname"><span class="pre">course_id</span></span><a class="headerlink" href="#PyQt5gui.MainWindow.course_id" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QLineEdit</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.course_name">
+<span class="sig-name descname"><span class="pre">course_name</span></span><a class="headerlink" href="#PyQt5gui.MainWindow.course_name" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QLineEdit</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.course_instructor_id">
+<span class="sig-name descname"><span class="pre">course_instructor_id</span></span><a class="headerlink" href="#PyQt5gui.MainWindow.course_instructor_id" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QLineEdit</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.reg_student_id">
+<span class="sig-name descname"><span class="pre">reg_student_id</span></span><a class="headerlink" href="#PyQt5gui.MainWindow.reg_student_id" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QLineEdit</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.reg_course_dropdown">
+<span class="sig-name descname"><span class="pre">reg_course_dropdown</span></span><a class="headerlink" href="#PyQt5gui.MainWindow.reg_course_dropdown" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QComboBox</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.assign_instructor_dropdown">
+<span class="sig-name descname"><span class="pre">assign_instructor_dropdown</span></span><a class="headerlink" href="#PyQt5gui.MainWindow.assign_instructor_dropdown" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QComboBox</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.assign_course_dropdown">
+<span class="sig-name descname"><span class="pre">assign_course_dropdown</span></span><a class="headerlink" href="#PyQt5gui.MainWindow.assign_course_dropdown" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QComboBox</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.search_input">
+<span class="sig-name descname"><span class="pre">search_input</span></span><a class="headerlink" href="#PyQt5gui.MainWindow.search_input" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QLineEdit</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="simple">
+<dt>Methods: we have 19 methods</dt><dd><p>__init__(): Build and lay out the UI; initialize dropdowns and default view.
+update_course_dropdown(): Refresh registration course dropdown from DB.
+register_student_to_course(): Register a given student to the selected course.
+export_to_csv(): Export the current table view to a CSV file.
+save_data(): Serialize the entire DB to JSON via SchoolDB model.
+load_data(): Load JSON snapshot into the DB (upsert-like behavior).
+get_selected_row(): Return the currently selected row index or None.
+edit_selected_record(): Edit the selected record depending on current_view.
+delete_selected_record(): Delete the selected record depending on current_view.
+display_students(): Populate table with students (optionally a provided list).
+display_instructors(): Populate table with instructors (optionally a list).
+display_courses(): Populate table with courses (optionally a list).
+search_records(): Filter current view based on free-text query.
+update_instructor_dropdowns(): Refresh instructor pickers.
+update_assign_course_dropdown(): Refresh assignment course picker.
+assign_instructor_to_course(): Assign selected instructor to selected course.
+add_student(): Validate and create a new student.
+add_instructor(): Validate and create a new instructor.
+add_course(): Validate and create a new course.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.add_course">
+<span class="sig-name descname"><span class="pre">add_course</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/PyQt5gui.html#MainWindow.add_course"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PyQt5gui.MainWindow.add_course" title="Link to this definition"></a></dt>
+<dd><p>Functionality: this function add a new course record after checking that all fields are entered.
+and the Course ID is unique, and the instructor must exist.</p>
+<p>Parameter: None</p>
+<p>Return Value: None</p>
+<p>User Feedback: the function will send a message box to the user telling them if it was a success or if there has been an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.add_instructor">
+<span class="sig-name descname"><span class="pre">add_instructor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/PyQt5gui.html#MainWindow.add_instructor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PyQt5gui.MainWindow.add_instructor" title="Link to this definition"></a></dt>
+<dd><p>Functionality: this function add a new instructor record after checking that all fields are entered.
+and the instructor ID is unique, the age is a non-negative integer and the email has a valid format.</p>
+<p>Parameter: None</p>
+<p>Return Value: None</p>
+<p>User Feedback: the function will send a message box to the user telling them if it was a success or if there has been an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.add_student">
+<span class="sig-name descname"><span class="pre">add_student</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/PyQt5gui.html#MainWindow.add_student"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PyQt5gui.MainWindow.add_student" title="Link to this definition"></a></dt>
+<dd><p>Functionality: this function add a new student record after checking that all fields are entered.
+and the student ID is unique, the age is a non-negative integer and the email has a valid format.</p>
+<p>Parameter: None</p>
+<p>Return Value: None</p>
+<p>User Feedback: the function will send a message box to the user telling them if it was a success or if there has been an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.assign_instructor_to_course">
+<span class="sig-name descname"><span class="pre">assign_instructor_to_course</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/PyQt5gui.html#MainWindow.assign_instructor_to_course"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PyQt5gui.MainWindow.assign_instructor_to_course" title="Link to this definition"></a></dt>
+<dd><p>Functionality: this function will assignt the instructor to the selected course.
+but it will make sure before doing this that the instructor and the course already exist
+and updates course’s instructor_id via dbapi.</p>
+<p>Parameter: None</p>
+<p>Return Value: None</p>
+<p>User feedback: a message box will appear for the user to tell them if it was a success or if there was an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.delete_selected_record">
+<span class="sig-name descname"><span class="pre">delete_selected_record</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/PyQt5gui.html#MainWindow.delete_selected_record"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PyQt5gui.MainWindow.delete_selected_record" title="Link to this definition"></a></dt>
+<dd><p>Functionality: this function deleted the selected record depending on the view that is active.
+if its the student view that is active then i will delete the student and all their registration.
+if its the instructor view that is active then it will delete the instructor and unassign them from the courses.
+if its the course view that is active then it will delete the course and the related registrations.</p>
+<p>Parameter: None</p>
+<p>Return Value: None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.display_courses">
+<span class="sig-name descname"><span class="pre">display_courses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">courses</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/PyQt5gui.html#MainWindow.display_courses"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PyQt5gui.MainWindow.display_courses" title="Link to this definition"></a></dt>
+<dd><p>Functionality: it renders the courses view in the table.</p>
+<p>Parameter: courses is the only parameter for this function, the user can either enter a list of tupple if he has the courses.
+or can enter nothing and the data will be read from the DB.</p>
+<p>Return Value: None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.display_instructors">
+<span class="sig-name descname"><span class="pre">display_instructors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instructors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/PyQt5gui.html#MainWindow.display_instructors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PyQt5gui.MainWindow.display_instructors" title="Link to this definition"></a></dt>
+<dd><p>Functionality: it renders the instructors view in the table.</p>
+<p>Parameter: instructors is the only parameter for this function, the user can either enter a list of tupple if he has the information of the instructors
+or can enter nothing and the data will be read from the DB.</p>
+<p>Return Value: None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.display_students">
+<span class="sig-name descname"><span class="pre">display_students</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">students</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/PyQt5gui.html#MainWindow.display_students"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PyQt5gui.MainWindow.display_students" title="Link to this definition"></a></dt>
+<dd><p>Functionality: it renders the students view in the table.</p>
+<p>Parameter: students is the only parameter for this function, the user can either enter a list of tupple if he has the information of the students
+or can enter nothing and the data will be read from the DB.</p>
+<p>Return Value: None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.edit_selected_record">
+<span class="sig-name descname"><span class="pre">edit_selected_record</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/PyQt5gui.html#MainWindow.edit_selected_record"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PyQt5gui.MainWindow.edit_selected_record" title="Link to this definition"></a></dt>
+<dd><p>Functionality: this function edit the selected record depending on the active view.
+If the students view is selected the function will let the user edit the name, the afe and the email of the student.
+If the instructors view is selected the function will let the user edit the name, the age and the email of the instructor.
+If the course view is selected the function will let the user edit the course name only.</p>
+<p>Parameter: None</p>
+<p>Return Value: None</p>
+<p>User Feedback: when the customer wants to edit, the function will open a small pop up which will allow the user to enter something new.
+if an error occurs the function will send a message box telling the user that there is an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.export_to_csv">
+<span class="sig-name descname"><span class="pre">export_to_csv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/PyQt5gui.html#MainWindow.export_to_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PyQt5gui.MainWindow.export_to_csv" title="Link to this definition"></a></dt>
+<dd><p>Functionality: it exports the current view to a csv file selected by the user.
+if the view is students then the file will include the registeres courses per student.
+if the view is the instructors then the file will contain the information of the instructor
+and if the view is the courses then the file will containe the enrolled student names.</p>
+<p>Parameter: None</p>
+<p>Return Value: None but if an error occured then it will display a message box telling the user that the function failed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.get_selected_row">
+<span class="sig-name descname"><span class="pre">get_selected_row</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/PyQt5gui.html#MainWindow.get_selected_row"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PyQt5gui.MainWindow.get_selected_row" title="Link to this definition"></a></dt>
+<dd><p>Functionality: this function gets the index of the selected row from the table.</p>
+<p>Parameter: None</p>
+<p>Return Value: the function will return an integer if a row is selected.
+if nothing is selected then it will return None.</p>
+<p>User Feedback: the function will send a warning to the user if no row is selected.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.load_data">
+<span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/PyQt5gui.html#MainWindow.load_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PyQt5gui.MainWindow.load_data" title="Link to this definition"></a></dt>
+<dd><p>Functionality: it import a JSON snapshot to the database. this function first start by loading a SchoolDB JSON file.
+then it will insert the students, instructors, courses and registrations if they are missing and
+lastly it will refresh the dropdowns and the views.</p>
+<p>Parameter: None</p>
+<p>Return Value: None but will show a message box on exceptions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.register_student_to_course">
+<span class="sig-name descname"><span class="pre">register_student_to_course</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/PyQt5gui.html#MainWindow.register_student_to_course"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PyQt5gui.MainWindow.register_student_to_course" title="Link to this definition"></a></dt>
+<dd><p>Functionality: this function register students using there ID to the selected course.
+this function first start by validating the present of the student_id and the course selection and it ensures that both exists.
+and it prevents duplicate registration so if a student is already registered in the course it won’t let him register twice.
+it the student isn’t registered yet it performs the registration and refresh the displayed table for the student to appear on it.</p>
+<p>Parameter: None</p>
+<p>Return Value: None</p>
+<p>User feedback: when a student want to register a course he/she will get a pop up message box that will tell them whether it was succesfull or there is an error.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.save_data">
+<span class="sig-name descname"><span class="pre">save_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/PyQt5gui.html#MainWindow.save_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PyQt5gui.MainWindow.save_data" title="Link to this definition"></a></dt>
+<dd><p>Functionality: the function exports a JSON snapshot of the entire database.
+the function will first build a SchoolDB instance from the current sqlite content and then will serialize to a user chosen JSON file.</p>
+<p>Parameter: None</p>
+<p>Return Value: None but will show a message box on exceptions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.search_records">
+<span class="sig-name descname"><span class="pre">search_records</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/PyQt5gui.html#MainWindow.search_records"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PyQt5gui.MainWindow.search_records" title="Link to this definition"></a></dt>
+<dd><p>Functionality: this function will search the current view based on what the user has typed.</p>
+<p>Parameter: None</p>
+<p>Return Value: None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.update_assign_course_dropdown">
+<span class="sig-name descname"><span class="pre">update_assign_course_dropdown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/PyQt5gui.html#MainWindow.update_assign_course_dropdown"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PyQt5gui.MainWindow.update_assign_course_dropdown" title="Link to this definition"></a></dt>
+<dd><p>Functionality: it refreshes the course dropdown used to assign an instructor.</p>
+<p>Parameter: None</p>
+<p>Return Value: None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.update_course_dropdown">
+<span class="sig-name descname"><span class="pre">update_course_dropdown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/PyQt5gui.html#MainWindow.update_course_dropdown"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PyQt5gui.MainWindow.update_course_dropdown" title="Link to this definition"></a></dt>
+<dd><p>Functionality: it refreshes the courses dropdown that we are using for the student registration</p>
+<p>Parameter: it doesn’t take any parameter</p>
+<p>Return Value: None but the function clear and repopulate self.reg_course_dropdown with the name and id of the course.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PyQt5gui.MainWindow.update_instructor_dropdowns">
+<span class="sig-name descname"><span class="pre">update_instructor_dropdowns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/PyQt5gui.html#MainWindow.update_instructor_dropdowns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PyQt5gui.MainWindow.update_instructor_dropdowns" title="Link to this definition"></a></dt>
+<dd><p>Functionality: it refreshes the instructor dropdown in assignment and other forms</p>
+<p>Parameter: None</p>
+<p>Returns: None</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PyQt5gui.main">
+<span class="sig-prename descclassname"><span class="pre">PyQt5gui.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/PyQt5gui.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#PyQt5gui.main" title="Link to this definition"></a></dt>
+<dd><p>Functionality: its the application entry point.
+The main function first start by ensuring that the database tables already exist.
+and it starts the qt event loop and shows the mainwindow.</p>
+<p>Parameter: None</p>
+<p>Return Value: None</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="Lab2_LanaHouriHomsi" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="database.html" class="btn btn-neutral float-right" title="database module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Lana Houri Homsi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

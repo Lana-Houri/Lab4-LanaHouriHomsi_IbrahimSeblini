@@ -1,0 +1,38 @@
+{
+  "students": [
+    {
+      "name": "Omar",
+      "age": 20,
+      "email": "omar@student.edu",
+      "student_id": "S-100",
+      "registered_courses": []
+    }
+  ],
+  "instructors": [
+    {
+      "name": "Dr. Lina",
+      "age": 40,
+      "email": "lina@uni.edu",
+      "instructor_id": "I-001",
+      "assigned_courses": [
+        "Intro to CS"
+      ]
+    }
+  ],
+  "courses": [
+    {
+      "course_id": "CSE101",
+      "course_name": "Intro to CS",
+      "instructor": {
+        "id": "I-001",
+        "name": "Dr. Lina"
+      },
+      "enrolled_students": [
+        {
+          "id": "S-100",
+          "name": "Omar"
+        }
+      ]
+    }
+  ]
+}

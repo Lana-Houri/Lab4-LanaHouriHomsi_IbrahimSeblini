@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>database module &mdash; PyQt5 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="models module" href="models.html" />
+    <link rel="prev" title="PyQt5gui module" href="PyQt5gui.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PyQt5
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Lab2_LanaHouriHomsi</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PyQt5gui.html">PyQt5gui module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">database module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#database.backup_database"><code class="docutils literal notranslate"><span class="pre">backup_database()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database.create_course"><code class="docutils literal notranslate"><span class="pre">create_course()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database.create_instructor"><code class="docutils literal notranslate"><span class="pre">create_instructor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database.create_registration"><code class="docutils literal notranslate"><span class="pre">create_registration()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database.create_student"><code class="docutils literal notranslate"><span class="pre">create_student()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database.create_table"><code class="docutils literal notranslate"><span class="pre">create_table()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database.delete_course"><code class="docutils literal notranslate"><span class="pre">delete_course()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database.delete_instructor"><code class="docutils literal notranslate"><span class="pre">delete_instructor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database.delete_registration"><code class="docutils literal notranslate"><span class="pre">delete_registration()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database.delete_student"><code class="docutils literal notranslate"><span class="pre">delete_student()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database.list_courses"><code class="docutils literal notranslate"><span class="pre">list_courses()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database.list_instructors"><code class="docutils literal notranslate"><span class="pre">list_instructors()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database.list_students"><code class="docutils literal notranslate"><span class="pre">list_students()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database.read_course"><code class="docutils literal notranslate"><span class="pre">read_course()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database.read_instructor"><code class="docutils literal notranslate"><span class="pre">read_instructor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database.read_registration"><code class="docutils literal notranslate"><span class="pre">read_registration()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database.read_student"><code class="docutils literal notranslate"><span class="pre">read_student()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database.update_course"><code class="docutils literal notranslate"><span class="pre">update_course()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database.update_instructor"><code class="docutils literal notranslate"><span class="pre">update_instructor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database.update_registration"><code class="docutils literal notranslate"><span class="pre">update_registration()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database.update_student"><code class="docutils literal notranslate"><span class="pre">update_student()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tkintergui.html">tkintergui module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyQt5</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Lab2_LanaHouriHomsi</a></li>
+      <li class="breadcrumb-item active">database module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/database.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-database">
+<span id="database-module"></span><h1>database module<a class="headerlink" href="#module-database" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="database.backup_database">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">backup_database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backup_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database.html#backup_database"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.backup_database" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.create_course">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">create_course</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">course_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">course_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instructor_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database.html#create_course"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.create_course" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.create_instructor">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">create_instructor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instructor_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">age</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database.html#create_instructor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.create_instructor" title="Link to this definition"></a></dt>
+<dd><p>Functionality: this function inserts new instructors into the instructors table in database.db
+Parameters: this function has 4 parameters</p>
+<blockquote>
+<div><p>1.instructor_id which is the unique identifier of an instructor
+2.name is the name of the instructor that we want to insert
+3.age: the age of the instructor with a constraint
+4.Email: the email of the instructor</p>
+</div></blockquote>
+<p>Return value: it return None, it only adds the instructor to the database table.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.create_registration">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">create_registration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">student_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">course_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database.html#create_registration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.create_registration" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.create_student">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">create_student</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">student_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">age</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database.html#create_student"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.create_student" title="Link to this definition"></a></dt>
+<dd><p>Functionality: the crear_student function inserts new students into the students table in database.db
+Parameters: this function has 4 parameters</p>
+<blockquote>
+<div><p>1.student_id which is the unique identifier of a student
+2.name is the name of the student that we want to enter
+3.age: the age of the student with a constraint
+4.Email: the email of the sudent</p>
+</div></blockquote>
+<p>Return value: this function doesn’t have a return value it only adds the student to the database table.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.create_table">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">create_table</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database.html#create_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.create_table" title="Link to this definition"></a></dt>
+<dd><p>Functionality:
+For the create_table function, we are creating 4 different tables in the database and it defines the primary key, foreign key and constraints of the attributes in each table:
+1. students table which has 4 columns: student id which is unique to each student, name, age(the check means that its only accepted if the age is positive ) and the email
+2. instructors table has also 4 columns: instructor id that is unique, name, age with the condition and email
+3. courses table has 3 columns: course_id that is unique, course_name, instructor id which links the course to an id.
+4. registration table has 3 columns: registration_id which is unique, student id and course_id</p>
+<p>Parameter: this function doesn’t has any parameter
+return values: the function doesn’t return anything.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.delete_course">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">delete_course</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">course_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database.html#delete_course"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.delete_course" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.delete_instructor">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">delete_instructor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instructor_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database.html#delete_instructor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.delete_instructor" title="Link to this definition"></a></dt>
+<dd><p>Functionality: this function deletes an instructor and unassigns them from the courses based on the instructor_id of the instructor that we want to delete
+this function first start by unassigning the instructor to do that it will go to the courses table and replace the instructor_id of the instructor that we want to delete by NULL
+and then it will go in the instructor table and delete the instructor based on the provided id.
+Parameters: it only has one parameter which is the instructor_id of the instructor that we want to delete.
+Return value: it will return None.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.delete_registration">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">delete_registration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">registration_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database.html#delete_registration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.delete_registration" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.delete_student">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">delete_student</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">student_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database.html#delete_student"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.delete_student" title="Link to this definition"></a></dt>
+<dd><p>Functionality: This function delete a student and the registrations related to this student based on his student_id.
+This function first start by deleting any record in the registration table where the student_id that we want to delete is present and then it will delete the student from the students table.
+Parameter: this function has only one parameter which is the student_id, we enter the student_id of the student that we want to delete
+Return value: this function doesn’t return anything, it returns None</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.list_courses">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">list_courses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database.html#list_courses"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.list_courses" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.list_instructors">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">list_instructors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database.html#list_instructors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.list_instructors" title="Link to this definition"></a></dt>
+<dd><p>Functionality: this function will print all of the instructors present in the instructors table in an alphabetical order based on the name of the instructor
+parameters: None
+Return Value: this function will return a list of tupples of the instructors and there information present in the table
+and if the instructor table is empty it will return an empty list.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.list_students">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">list_students</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database.html#list_students"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.list_students" title="Link to this definition"></a></dt>
+<dd><p>Functionality: this function will print all of the students present in the student table in an alphabetical order based on the name of the student
+parameters: None
+Return Value: this function will return a list of tupples of the students and there information present in the table
+and if the students table is empty it will return an empty list</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.read_course">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">read_course</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">course_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database.html#read_course"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.read_course" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.read_instructor">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">read_instructor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instructor_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database.html#read_instructor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.read_instructor" title="Link to this definition"></a></dt>
+<dd><p>Functionality: This function retrieve the records of an instructor based on the provided instructor_id
+Parameters: the only parameter that this function takes is the instructor_id to identify the instructor
+Return value: in this function there is 2 case of return value, if the instructor_id provided exist in the table then the function will return a tupple with the information of the instructor
+if the instructor_id provided does not exist then the function will return None</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.read_registration">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">read_registration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">registration_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database.html#read_registration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.read_registration" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.read_student">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">read_student</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">student_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database.html#read_student"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.read_student" title="Link to this definition"></a></dt>
+<dd><p>Functionality: This function retrieve the records of a student based on the provided student_id
+Parameters: the only parameter that this function take is the student_id to identify the student
+Return value: in this function there is 2 case of return value, if the student id provided exist in the table then the function will return a tupple with the information of the student
+if the student_id provided does not exist then the function will return None</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.update_course">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">update_course</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">course_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">course_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instructor_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database.html#update_course"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.update_course" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.update_instructor">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">update_instructor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instructor_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">age</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database.html#update_instructor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.update_instructor" title="Link to this definition"></a></dt>
+<dd><p>Functionality: this function update an existing instructor record in the instructors table in the database
+Parameter: this function has 4 parameters
+1. instructor_id which is the unique identifier of an instructor
+2. name: this parameter is optional, either we can add a new name or the default value will be None
+3. age: also optional, either we can add a new age or the default value will be None
+4. email: also optional, either we can add a new name or the default would be optional
+Return value: the function will return None.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.update_registration">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">update_registration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">registration_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">student_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">course_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database.html#update_registration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.update_registration" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database.update_student">
+<span class="sig-prename descclassname"><span class="pre">database.</span></span><span class="sig-name descname"><span class="pre">update_student</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">student_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">age</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database.html#update_student"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database.update_student" title="Link to this definition"></a></dt>
+<dd><p>Functionality: this function update an existing studend record in the students table in the database
+Parameter: this function has 4 parameters
+1. student_id which is the unique identifier of a student
+2. name: this parameter is optional, either we can add a new name or the default value will be None
+3. age: also optional, either we can add a new age or the default value will be None
+4. email: also optional, either we can add a new name or the default would be optional
+Return value: the function doesn’t return any value.</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="PyQt5gui.html" class="btn btn-neutral float-left" title="PyQt5gui module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="models.html" class="btn btn-neutral float-right" title="models module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Lana Houri Homsi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
