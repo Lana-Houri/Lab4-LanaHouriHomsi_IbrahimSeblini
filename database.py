@@ -16,7 +16,6 @@ def create_table():
     Parameter: this function doesn't has any parameter
     return values: the function doesn't return anything. 
     '''
-
     db = sqlite3.connect('database.db')
     cursor = db.cursor()
     cursor.execute("""
@@ -55,7 +54,6 @@ def create_table():
     db.commit()
     db.close()
 
-
 def create_student(student_id, name, age, email):
 
     '''
@@ -67,12 +65,12 @@ def create_student(student_id, name, age, email):
         4.Email: the email of the sudent 
     Return value: this function doesn't have a return value it only adds the student to the database table.
     '''
-
     db = sqlite3.connect('database.db')
     cursor = db.cursor()
     cursor.execute("INSERT INTO students (student_id, name, age, email) VALUES (?, ?, ?, ?)",(student_id, name, age, email))
     db.commit()
     db.close()
+
 
 
 def read_student(student_id):
@@ -141,6 +139,7 @@ def create_instructor(instructor_id, name, age, email):
     db.close()
 
 def read_instructor(instructor_id):
+
     '''
     Functionality: This function retrieve the records of an instructor based on the provided instructor_id
     Parameters: the only parameter that this function takes is the instructor_id to identify the instructor
@@ -155,6 +154,7 @@ def read_instructor(instructor_id):
     return result
 
 def update_instructor(instructor_id, name=None, age=None, email=None):
+
     '''
     Functionality: this function update an existing instructor record in the instructors table in the database
     Parameter: this function has 4 parameters
@@ -176,6 +176,7 @@ def update_instructor(instructor_id, name=None, age=None, email=None):
     db.close()
 
 def delete_instructor(instructor_id):
+
     '''
     Functionality: this function deletes an instructor and unassigns them from the courses based on the instructor_id of the instructor that we want to delete
     this function first start by unassigning the instructor to do that it will go to the courses table and replace the instructor_id of the instructor that we want to delete by NULL
@@ -190,68 +191,209 @@ def delete_instructor(instructor_id):
     db.commit()
     db.close()
 
-def create_course(course_id, course_name, instructor_id=None):
+def create_course(course_id: str, course_name: str, instructor_id: str = None) -> None:
+    """
+    Create a new course record in the database.
+
+    Parameters:
+        course_id (str): Unique identifier for the course.
+        course_name (str): The name/title of the course.
+        instructor_id (str, optional): The ID of the instructor teaching the course. Defaults to None.
+
+    Returns:
+        None
+    """
+    # Connect to the database
     db = sqlite3.connect('database.db')
     cursor = db.cursor()
-    cursor.execute("INSERT INTO courses (course_id, course_name, instructor_id) VALUES (?, ?, ?)",(course_id, course_name, instructor_id))
+
+    # Insert a new course row into the "courses" table
+    cursor.execute(
+        "INSERT INTO courses (course_id, course_name, instructor_id) VALUES (?, ?, ?)",
+        (course_id, course_name, instructor_id)
+    )
+
+    # Save changes and close connection
     db.commit()
     db.close()
 
-def read_course(course_id):
+
+def read_course(course_id: str):
+    """
+    Retrieve a single course record from the database.
+
+    Parameters:
+        course_id (str): The ID of the course to fetch.
+
+    Returns:
+        tuple | None: A tuple containing course details (course_id, course_name, instructor_id),
+                      or None if no record is found.
+    """
     db = sqlite3.connect('database.db')
     cursor = db.cursor()
+
+    # Query the course by ID
     cursor.execute("SELECT * FROM courses WHERE course_id = ?", (course_id,))
     result = cursor.fetchone()
+
     db.close()
     return result
 
-def update_course(course_id, course_name=None, instructor_id=None):
+
+def update_course(course_id: str, course_name: str = None, instructor_id: str = None) -> None:
+    """
+    Update details of an existing course in the database.
+
+    Parameters:
+        course_id (str): The ID of the course to update.
+        course_name (str, optional): The new name of the course. If None, the name is not updated.
+        instructor_id (str, optional): The new instructor ID. If None, the instructor is not updated.
+
+    Returns:
+        None
+    """
     db = sqlite3.connect('database.db')
     cursor = db.cursor()
+
+    # Update course name if provided
     if course_name:
-        cursor.execute("UPDATE courses SET course_name = ? WHERE course_id = ?", (course_name, course_id))
+        cursor.execute(
+            "UPDATE courses SET course_name = ? WHERE course_id = ?",
+            (course_name, course_id)
+        )
+
+    # Update instructor if provided
     if instructor_id is not None:
-        cursor.execute("UPDATE courses SET instructor_id = ? WHERE course_id = ?", (instructor_id, course_id))
+        cursor.execute(
+            "UPDATE courses SET instructor_id = ? WHERE course_id = ?",
+            (instructor_id, course_id)
+        )
+
     db.commit()
     db.close()
 
-def delete_course(course_id):
+
+def delete_course(course_id: str) -> None:
+    """
+    Delete a course and any associated registrations from the database.
+
+    Parameters:
+        course_id (str): The ID of the course to delete.
+
+    Returns:
+        None
+    """
     db = sqlite3.connect('database.db')
     cursor = db.cursor()
+
+    # Remove registrations tied to this course
     cursor.execute("DELETE FROM registrations WHERE course_id = ?", (course_id,))
+
+    # Remove the course itself
     cursor.execute("DELETE FROM courses WHERE course_id = ?", (course_id,))
+
     db.commit()
     db.close()
 
-def create_registration(student_id, course_id):
+def create_registration(student_id: str, course_id: str) -> None:
+    """
+    Create a new registration record (enroll a student in a course).
+
+    Parameters:
+        student_id (str): The ID of the student enrolling.
+        course_id (str): The ID of the course being registered for.
+
+    Returns:
+        None
+    """
     db = sqlite3.connect('database.db')
     cursor = db.cursor()
-    cursor.execute("INSERT INTO registrations (student_id, course_id) VALUES (?, ?)",(student_id, course_id))
+
+    # Insert a new registration row
+    cursor.execute(
+        "INSERT INTO registrations (student_id, course_id) VALUES (?, ?)",
+        (student_id, course_id)
+    )
+
     db.commit()
     db.close()
 
-def read_registration(registration_id):
+
+def read_registration(registration_id: int):
+    """
+    Retrieve a registration record by its ID.
+
+    Parameters:
+        registration_id (int): The unique ID of the registration.
+
+    Returns:
+        tuple | None: A tuple containing registration details (registration_id, student_id, course_id),
+                      or None if no record is found.
+    """
     db = sqlite3.connect('database.db')
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM registrations WHERE registration_id = ?", (registration_id,))
+
+    cursor.execute(
+        "SELECT * FROM registrations WHERE registration_id = ?",
+        (registration_id,)
+    )
     result = cursor.fetchone()
+
     db.close()
     return result
 
-def update_registration(registration_id, student_id=None, course_id=None):
+
+def update_registration(registration_id: int, student_id: str = None, course_id: str = None) -> None:
+    """
+    Update details of an existing registration.
+
+    Parameters:
+        registration_id (int): The ID of the registration to update.
+        student_id (str, optional): New student ID to assign. If None, not updated.
+        course_id (str, optional): New course ID to assign. If None, not updated.
+
+    Returns:
+        None
+    """
     db = sqlite3.connect('database.db')
     cursor = db.cursor()
+
+    # Update student if provided
     if student_id:
-        cursor.execute("UPDATE registrations SET student_id = ? WHERE registration_id = ?", (student_id, registration_id))
+        cursor.execute(
+            "UPDATE registrations SET student_id = ? WHERE registration_id = ?",
+            (student_id, registration_id)
+        )
+
+    # Update course if provided
     if course_id:
-        cursor.execute("UPDATE registrations SET course_id = ? WHERE registration_id = ?", (course_id, registration_id))
+        cursor.execute(
+            "UPDATE registrations SET course_id = ? WHERE registration_id = ?",
+            (course_id, registration_id)
+        )
+
     db.commit()
     db.close()
 
-def delete_registration(registration_id):
+
+def delete_registration(registration_id: int) -> None:
+    """
+    Delete a registration record from the database.
+
+    Parameters:
+        registration_id (int): The ID of the registration to delete.
+
+    Returns:
+        None
+    """
     db = sqlite3.connect('database.db')
     cursor = db.cursor()
-    cursor.execute("DELETE FROM registrations WHERE registration_id = ?", (registration_id,))
+
+    cursor.execute(
+        "DELETE FROM registrations WHERE registration_id = ?",
+        (registration_id,)
+    )
+
     db.commit()
     db.close()
 
@@ -270,6 +412,7 @@ def list_students():
     return rows
 
 def list_instructors():
+
     '''
     Functionality: this function will print all of the instructors present in the instructors table in an alphabetical order based on the name of the instructor
     parameters: None
@@ -283,29 +426,57 @@ def list_instructors():
     db.close()
     return rows
 
-def list_courses(): 
+def list_courses():
+    """
+    List all courses in the database along with their instructor names.
+
+    Parameters:
+        None
+
+    Returns:
+        list[tuple]: A list of tuples in the format (course_id, course_name, instructor_name).
+                     If an instructor is not assigned, the instructor_name will be an empty string.
+    """
     db = sqlite3.connect('database.db')
     cursor = db.cursor()
+
+    # Join courses with instructors to display instructor names
     cursor.execute("""
-        SELECT c.course_id, c.course_name, COALESCE(i.name,'')
+        SELECT c.course_id, c.course_name, COALESCE(i.name, '')
         FROM courses c
         LEFT JOIN instructors i ON i.instructor_id = c.instructor_id
         ORDER BY c.course_name
     """)
+
     rows = cursor.fetchall()
+
     db.close()
     return rows
 
-def backup_database(backup_path=None):
+
+def backup_database(backup_path: str = None) -> str:
+    """
+    Create a backup of the database file.
+
+    Parameters:
+        backup_path (str, optional): Directory where the backup should be saved.
+                                     If None, the backup will be stored in the current directory.
+
+    Returns:
+        str: The full file path of the backup file created.
+    """
+    # If no path is given or the path is a directory, generate a timestamped filename
     if backup_path is None or os.path.isdir(backup_path):
         ts = datetime.now().strftime('%Y%m%d_%H%M%S')
         fname = f"database_backup_{ts}.db"
         dirpath = backup_path if backup_path and os.path.isdir(backup_path) else "."
         backup_path = os.path.join(dirpath, fname)
+
     src = sqlite3.connect('database.db')
     dst = sqlite3.connect(backup_path)
     with dst:
         src.backup(dst)
+
     src.close()
     dst.close()
     return backup_path
