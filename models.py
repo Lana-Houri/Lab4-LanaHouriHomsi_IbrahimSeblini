@@ -3,7 +3,32 @@ import json
 import re
 
 class Person():
+    '''
+    Functionality: this class stores a persons name, age and email and it will check if the age is negative or not and will check if the email is in the correct format.
+    it will also provide an introduction message of the person. 
+    
+    this class has 3 attributes:
+    - name attribute needs to be a string and we write the name of the person.
+    - the age attribute needs to be an integer and we write the age of the person and checks that its not negative
+    - the email attribute needs to be a string and we write the email of the person and check that the format of the email is valid 
+    
+    Methods: The class has 2 methods
+    -  __init__(name, age, email): this method initialze the name age and the email and makes sure that the age and the email are valid
+    - introduce: this method return a string where it is introducing a person. 
+    '''
     def __init__(self, name: str, age: int, email: str):
+        '''
+        Functionality: it will initilaze a new person instance.
+
+        Parameter: this method has 3 parameters
+        1. the name where we write the full name of the person and need to be a string 
+        2. the age where we write the age of the person and it needs to be an positive integer. 
+        3. the email where we write the email of the person and  has a string type and needs to be in the valid format.
+
+        Return Value: it will return None
+
+        Raises: it will send a value error if the age is negative or the email is invalid. 
+        '''
         if age < 0:
             raise ValueError(" The age can't be negative")
         if not re.match(r"[^@]+@[^@]+\.[^@]+", email):
@@ -13,20 +38,89 @@ class Person():
         self._email = email
     
     def introduce(self):
+        '''
+        Functionality: this function will send an introduction message about the person
+
+        Parameter: it doesn't have any parameter 
+
+        Return Value: the function will return a string.  
+        '''
         return f"My name is {self.name} and I am {self.age} years old."
     
 class Student(Person):
+    '''
+    Functionality: this class inherits from the Person class, the functionalities of this class is that it stores student-specific data that has been inhereted from the person class
+    and it keeps track of the registered courses and allow the registration of new classes. 
+
+    Attributes:
+    1. name of type string: We have the name of the student that is inherited from the Person class.
+    2. age of type integer: we have the age of the student but the age must be positive and its also inherited from the Person Class.
+    3. _email of type string: we have the email address of the student but the email must be in a valid format and is also inherited from the Person Class.
+    4. student_id of type string: the student_id is the unique identifier for the student.
+    5. registered_courses  has a list type: it is a list of courses the student has registered for.
+
+    Methods: this class has 2 functions
+    - __init__(name, age, email, student_id): we initialize a student instance with student and personal data
+    - register_course(course): this method register courses to student and return a confirmation message.  
+
+    '''
     def __init__(self, name: str, age: int, email: str, student_id: str):
-        super().__init__(name, age, email)
+        '''
+        Functionality: it will initilaze a new student instance. 
+
+        Parameter: this function has 4 parameters
+        1. name of type string: it takes the name of the student.
+        2. age of type integer: it takes the age of the student and checks that the age entered is positive.
+        3. email of type string: it takes the email address of the student but before adding it, it checks that email enter is in a valid format.
+        4. student_id of type string: Unique identifier assigned to the student.
+
+        Return Value: it returns None.
+        '''
+         super().__init__(name, age, email)
         self.student_id= student_id
         self.registered_courses = []
-
+        return f"My name is {self.name} and I am {self.age} years old."
+   
     def register_course(self, course: str):
+        '''
+        Functionality: this method register the student to a new course.
+
+        Parameter: only takes one parameter which is course of type string
+
+        Return Value: it returns a confirmation message that the student has been added to the certain course
+        '''
         self.registered_courses.append(course)
         return f"{self.name} registeres in the {course} course."
 
 class Instructor(Person):
+
+    '''
+    Functionality: this class inherite from the person class, the functionalities of this class is that it stores instructor-specific data and personal data inherited from person class.
+    Additionally, it keeps track of courses assigned to the instructor and allows assigning new courses to the instructor.
+
+    Attributes:
+    1. name of type string: the  name of the instructor that is inherited from Person.
+    2. age of type integer: the age of the instructor that needs to be positive and its also inherited from Person.
+    3. email of type string:the email address of the instructor that needs to be in valid format and its inherited from Person.
+    4. instructor_id of type string: is a unique identifier for the instructor.
+    5. assigned_courses of type list: List of courses the instructor has been assigned to.
+
+    Methods: we have for this class 2 methods.
+    - __init__(name, age, email, instructor_id): it initializes the instructor instance with personal and instructor specific data
+    - assign_course(course): it assigns the instructor to a new course and returns a confirmation message.
+    '''
     def __init__(self, name: str, age: int, email: str, instructor_id: str):
+        '''
+        Functionality: it will initilaze a new instructor instance. 
+
+        Parameter: this function has 4 parameters
+        1. name of type string: it takes the name of the instructor.
+        2. age of type integer: it takes the age of the instructor and checks that the age entered is positive.
+        3. email of type string: it takes the email address of the instructor but before adding it, it checks that email enter is in a valid format.
+        4. instructor_id of type string: Unique identifier assigned to the student.
+
+        Return Value: it returns None.
+        '''
         super().__init__(name, age, email)
         self.instructor_id = instructor_id
         self.assigned_courses= []
